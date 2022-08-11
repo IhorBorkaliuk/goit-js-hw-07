@@ -7,6 +7,8 @@ const galleryRef = document.querySelector('.gallery')
 const gallery = []
 
 galleryItems.forEach(image => {
+    const galleryItem = document.createElement('li')
+    galleryItem.classList.add('gallery__item')
     const galleryLink = document.createElement('a')
     galleryLink.classList.add('gallery__link')
     galleryLink.href = image.original
@@ -15,8 +17,9 @@ galleryItems.forEach(image => {
     galleryImage.src = image.preview
     galleryImage.alt = image.description
 
+    galleryItem.append(galleryLink)
     galleryLink.append(galleryImage)
-    gallery.push(galleryLink)
+    gallery.push(galleryItem)
 
 })
 

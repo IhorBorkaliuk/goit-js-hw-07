@@ -44,11 +44,16 @@ galleryRef.addEventListener('click', evt => {
   `)
   instance.show()
 
-  galleryRef.addEventListener('keydown', evt => {
-		if (evt.key === 'Escape') {
-			instance.close()
-		}
-  })
+
+  galleryRef.addEventListener('keydown', onKeyPress)
+
+  function onKeyPress(evt) {
+    console.log(evt.key)
+    		if (evt.key === 'Escape') {
+      instance.close()
+        }
+  galleryRef.removeEventListener('keydown', onKeyPress)
+  }
   
 })
 
@@ -106,11 +111,15 @@ galleryRef.addEventListener('click', evt => {
 //   `)
 //   instance.show()
 
-//   galleryRef.addEventListener('keydown', evt => {
-// 		if (evt.key === 'Escape') {
-// 			instance.close()
-// 		}
-//   })
+  // galleryRef.addEventListener('keydown', onKeyPress)
+
+  // function onKeyPress(evt) {
+  //   console.log(evt.key)
+  //   		if (evt.key === 'Escape') {
+  //     instance.close()
+  //       }
+  // galleryRef.removeEventListener('keydown', onKeyPress)
+  // }
 
 // })
 
